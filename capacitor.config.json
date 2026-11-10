@@ -1,0 +1,8 @@
+{
+  "appId": "com.sanzhan.checkin",
+  "appName": "三战手记",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  }
+}
