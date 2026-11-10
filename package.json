@@ -1,6 +1,6 @@
 {
   "name": "sanzhan-checkin",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "description": "三战手记：三国志战略版个人记录与赛季统计",
   "scripts": {

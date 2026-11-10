@@ -3,6 +3,7 @@ package com.sanzhan.checkin;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,11 +22,16 @@ public class MainActivity extends BridgeActivity {
         WindowCompat.getInsetsController(window, window.getDecorView()).setAppearanceLightStatusBars(false);
 
         View webView = getBridge().getWebView();
-        ViewCompat.setOnApplyWindowInsetsListener(webView, (view, insets) -> {
+        ViewGroup container = (ViewGroup) webView.getParent();
+        ViewCompat.setOnApplyWindowInsetsListener(container, (view, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            view.setPadding(0, bars.top, 0, bars.bottom);
+            ViewGroup.MarginLayoutParams layout = (ViewGroup.MarginLayoutParams) webView.getLayoutParams();
+            int minTop = (int) (28 * getResources().getDisplayMetrics().density);
+            layout.topMargin = Math.max(bars.top, minTop);
+            layout.bottomMargin = bars.bottom;
+            webView.setLayoutParams(layout);
             return WindowInsetsCompat.CONSUMED;
         });
-        ViewCompat.requestApplyInsets(webView);
+        ViewCompat.requestApplyInsets(container);
     }
 }
