@@ -67,7 +67,7 @@
       {id:"horse",name:"驯马",hint:"良驹入厩",icon:'<svg viewBox="0 0 24 24"><path d="M4 18c2-1 2-4 3-7l4-4 2 3 5 1 2 4-2 3h-4M7 11l-2-4 4-2M8 18v2M17 18v2M15 11l2-2 3 1"/></svg>',description:"仅记录坐骑类装备",label:"添加坐骑"},
       {id:"forge",name:"打铁",hint:"锻造装备",icon:'<svg viewBox="0 0 24 24"><path d="M14 4 20 10M13 5l-3 3 6 6 3-3M4 20l8-8M5 6l2 2M4 11l2 2M9 4l2 2"/></svg>',description:"记录武器、防具与特技",label:"添加装备"}
     ];
-    const STORE_KEY="sanzhan-checkin-records-v1", SEASON_KEY="sanzhan-checkin-seasons-v1", PROFILE_KEY="sanzhan-checkin-profiles-v1", ACTIVE_PROFILE_KEY="sanzhan-checkin-active-profile-v1", APP_VERSION="1.1.0", REPO="599xiangsu/sanzhan-checkin";
+    const STORE_KEY="sanzhan-checkin-records-v1", SEASON_KEY="sanzhan-checkin-seasons-v1", PROFILE_KEY="sanzhan-checkin-profiles-v1", ACTIVE_PROFILE_KEY="sanzhan-checkin-active-profile-v1", APP_VERSION="1.1.1", REPO="599xiangsu/sanzhan-checkin";
     let profiles=readProfiles();
     if(!profiles.length){profiles=[{id:"default",name:"我的角色",server:"",seasonNumber:1}];localStorage.setItem(PROFILE_KEY,JSON.stringify(profiles))}
     let activeProfileId=localStorage.getItem(ACTIVE_PROFILE_KEY);
